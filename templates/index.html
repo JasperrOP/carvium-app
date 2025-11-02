@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carvium</title>
+    <link rel="stylesheet" href="\static\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <div id="loader">
+    <h2>Carvium</h2>
+  </div>
+    <div id="cursor"> </div>
+    <canvas id="bgCanvas"></canvas>
+
+        <div id="main">
+            <div class="d1">
+            <nav class="navbar" >
+                    <h1>Carvium<svg class='s1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" xml:space="preserve"><path fill="#E5E5E4" d="M70.87 96.028h144.219v184.467H70.87z"/><path fill="#EFEFEF" d="M70.87 96.028h13.416v184.467H70.87z"/><path fill="#7FD3B9" d="m299.003 188.484-38.944-38.793h-44.97v93.91h50.43c0-6.708 7.343-16.396 16.4-16.396 9.056 0 16.406 9.689 16.406 16.396h34.152v-21.794s-.681-33.323-33.474-33.323z"/><path fill="#C1C1C1" d="M298.325 243.673c0 9.056-7.35 16.393-16.406 16.393s-16.4-7.337-16.4-16.393c0-9.063 7.343-16.403 16.4-16.403 9.057.001 16.406 7.34 16.406 16.403z"/><path fill="#FFDA88" d="M287.386 243.673a5.46 5.46 0 0 1-5.466 5.463 5.457 5.457 0 0 1-5.46-5.463c0-3.027 2.44-5.47 5.46-5.47a5.463 5.463 0 0 1 5.466 5.47zM315.708 206.708v16.77h16.77s.419-6.708-3.685-16.77h-13.085z"/><path fill="#D1D1D1" d="M276.459 243.673c0-7.137 4.575-13.141 10.926-15.394-1.716-.612-3.537-1.008-5.466-1.008-9.056 0-16.4 7.34-16.4 16.403 0 9.056 7.343 16.393 16.4 16.393 1.929 0 3.75-.39 5.466-1.002-6.35-2.254-10.926-8.261-10.926-15.392z"/><path fill="#C1C1C1" d="M70.87 280.495h144.219v20.124H70.87z"/><path fill="#FE6F80" d="M157.945 136.278a5.462 5.462 0 0 1 7.723 0l3.862 3.868 15.466-15.46a5.47 5.47 0 0 1 7.73 0 5.458 5.458 0 0 1 0 7.73l-19.324 19.324a5.462 5.462 0 0 1-7.733 0l-7.723-7.73a5.452 5.452 0 0 1-.001-7.732zM157.945 180.01a5.462 5.462 0 0 1 7.723 0l3.862 3.862 15.466-15.46a5.476 5.476 0 0 1 7.73 0 5.462 5.462 0 0 1 0 7.733l-19.324 19.324a5.462 5.462 0 0 1-7.733 0l-7.723-7.733a5.445 5.445 0 0 1-.001-7.726zM157.945 229.203a5.462 5.462 0 0 1 7.723 0l3.862 3.868 15.466-15.46a5.463 5.463 0 0 1 7.73 0 5.458 5.458 0 0 1 0 7.73l-19.324 19.321a5.456 5.456 0 0 1-7.733 0l-7.723-7.73a5.449 5.449 0 0 1-.001-7.729z"/><path fill="#D1D1D1" d="M70.87 280.495h13.416v20.124H70.87z"/><path fill="#BBEAD9" d="M215.089 149.691h13.416v93.91h-13.416z"/><path fill="#E5E5E4" d="M221.797 188.261v-21.8h54.662l22.544 22.023z"/><path fill="#EFEFEF" d="M221.797 166.461h6.708v22.023h-6.708z"/><path fill="#C1C1C1" d="M84.286 146.337h57.017v10.062H84.286zM84.286 126.492h36.893v9.783H84.286zM84.286 189.938h57.017V200H84.286zM84.286 170.093h36.893v9.783H84.286zM84.286 236.893h57.017v10.062H84.286zM84.286 217.048h36.893v9.783H84.286z"/><g><path fill="#161616" d="M330.8 250.309h-32.475a5.032 5.032 0 0 1-5.031-5.031c0-3.901-1.107-12.977-11.375-12.977-11.238 0-11.369 12.846-11.369 12.977a5.033 5.033 0 0 1-5.031 5.031h-16.891a5.032 5.032 0 0 1 0-10.062h12.41c1.775-8.372 7.989-18.008 20.88-18.008 12.63 0 19.311 8.418 21.001 18.008h22.849v-18.44c-.007-2.817-.832-27.454-27.604-27.454a5.033 5.033 0 0 1-3.551-1.467l-36.631-36.487h-39.54v83.849h10.062a5.032 5.032 0 0 1 0 10.062h-15.093a5.032 5.032 0 0 1-5.031-5.031v-93.91a5.032 5.032 0 0 1 5.031-5.031h46.647c1.33 0 2.607.527 3.55 1.467l36.674 36.53c10.14.403 18.398 3.747 24.575 9.954 10.926 10.979 10.976 26.874 10.972 27.542v23.448a5.028 5.028 0 0 1-5.029 5.03z"/><path fill="#161616" d="M298.325 193.292h-74.851a5.032 5.032 0 0 1-5.031-5.031v-20.124a5.032 5.032 0 0 1 5.031-5.031h52.985c1.261 0 2.479.475 3.406 1.33l21.866 20.124a5.029 5.029 0 0 1-3.406 8.732zm-69.82-10.062h56.925l-10.933-10.062h-45.992v10.062zM281.919 265.097c-11.817 0-21.431-9.61-21.431-21.424 0-11.817 9.613-21.434 21.431-21.434 11.821 0 21.437 9.616 21.437 21.434 0 11.814-9.616 21.424-21.437 21.424zm0-32.796c-6.269 0-11.369 5.103-11.369 11.372 0 6.266 5.1 11.362 11.369 11.362 6.272 0 11.375-5.096 11.375-11.362 0-6.269-5.103-11.372-11.375-11.372z"/><path fill="#161616" d="M287.386 243.673a5.46 5.46 0 0 1-5.466 5.463 5.457 5.457 0 0 1-5.46-5.463c0-3.027 2.44-5.47 5.46-5.47a5.463 5.463 0 0 1 5.466 5.47zM330.8 230.185h-16.77a5.032 5.032 0 0 1-5.031-5.031v-16.77a5.032 5.032 0 0 1 5.031-5.031h12.983a5.034 5.034 0 0 1 4.658 3.131c4.399 10.779 4.192 18.106 4.153 18.908a5.029 5.029 0 0 1-5.024 4.793zm-11.739-10.061h6.213a46.943 46.943 0 0 0-1.752-6.708h-4.461v6.708zM213.412 307.326H69.193a5.032 5.032 0 0 1-5.031-5.031v-20.124a5.032 5.032 0 0 1 5.031-5.031h144.219a5.032 5.032 0 0 1 5.031 5.031v20.124a5.032 5.032 0 0 1-5.031 5.031zM74.224 297.264h134.158v-10.062H74.224v10.062zM84.286 146.337h57.017v10.062H84.286zM157.945 136.278a5.462 5.462 0 0 1 7.723 0l3.862 3.868 15.466-15.46a5.47 5.47 0 0 1 7.73 0 5.458 5.458 0 0 1 0 7.73l-19.324 19.324a5.462 5.462 0 0 1-7.733 0l-7.723-7.73a5.452 5.452 0 0 1-.001-7.732zM157.945 180.01a5.462 5.462 0 0 1 7.723 0l3.862 3.862 15.466-15.46a5.476 5.476 0 0 1 7.73 0 5.462 5.462 0 0 1 0 7.733l-19.324 19.324a5.462 5.462 0 0 1-7.733 0l-7.723-7.733a5.445 5.445 0 0 1-.001-7.726zM157.945 229.203a5.462 5.462 0 0 1 7.723 0l3.862 3.868 15.466-15.46a5.463 5.463 0 0 1 7.73 0 5.458 5.458 0 0 1 0 7.73l-19.324 19.321a5.456 5.456 0 0 1-7.733 0l-7.723-7.73a5.449 5.449 0 0 1-.001-7.729z"/><path fill="#161616" d="M213.412 287.202H69.193a5.033 5.033 0 0 1-5.031-5.031V97.705a5.032 5.032 0 0 1 5.031-5.031h21.801a5.032 5.032 0 0 1 0 10.062h-16.77v174.405h134.158V102.736h-93.91a5.032 5.032 0 0 1 0-10.062h98.941a5.032 5.032 0 0 1 5.031 5.031v184.467a5.033 5.033 0 0 1-5.032 5.03z"/><path fill="#161616" d="M84.286 126.492h36.893v9.783H84.286zM84.286 189.938h57.017V200H84.286zM84.286 170.093h36.893v9.783H84.286zM84.286 236.893h57.017v10.062H84.286zM84.286 217.048h36.893v9.783H84.286z"/></g></svg></h1>
+        
+                <div class="n1">
+                    <a href="/dataset">Dataset</a>
+                    <a href="#about">About US</a>
+                    <a href="#prediction-form">Prediction</a>
+                </div>
+            </nav>
+        <div class="main">
+            
+            <div class="cont1">
+                <video class="vid" loop autoplay muted>
+                    <source src="\static\vid1.mp4" type="video/mp4">
+                </video>
+                <h2 class="h21">Carvium is an AI-powered web application that predicts the resale price of used cars with high accuracy.
+Built using advanced machine learning models, it analyzes key features like brand, year, mileage, and fuel type.
+Carvium helps buyers and sellers make smarter, data-driven decisions in the used car market.</h2>
+            
+            </div>
+            
+
+                <div id="string">
+       <svg width="1000" height="200" >
+  <path
+    d="M 10 100 Q 500 100 990 100"
+    stroke="white"
+    fill="transparent" />
+</svg> 
+    </div>
+            
+    <div id="page2">
+        <h1 ><pre>                        “Carvium-Machine Learns Cars”</pre></h1>
+    </div>
+    
+    <section class="predict-section" id="prediction-form">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Get Your Instant Quote</h1>
+                <p>Fill in the details to get your data-driven valuation.</p>
+            </div>
+
+            <!-- Updated form with AJAX submission -->
+            <form class="predict-form" id="prediction-form-element" method="POST">
+                <div class="form-grid">
+                    
+                  
+                    <div class="form-group full-width">
+                        <label for="name">Brand</label>
+                        <select id="name" name="name" required>
+                            <option value="">Select a Car Brand</option>
+                            <option>Maruti</option><option>Skoda</option><option>Honda</option>
+                            <option>Hyundai</option><option>Toyota</option><option>Ford</option>
+                            <option>Renault</option><option>Mahindra</option><option>Tata</option>
+                            <option>Chevrolet</option><option>Datsun</option><option>Jeep</option>
+                            <option>Mercedes-Benz</option><option>Mitsubishi</option><option>Audi</option>
+                            <option>Volkswagen</option><option>BMW</option><option>Nissan</option>
+                            <option>Lexus</option><option>Jaguar</option><option>Land</option>
+                            <option>MG</option><option>Volvo</option><option>Daewoo</option>
+                            <option>Kia</option><option>Fiat</option><option>Force</option>
+                            <option>Ambassador</option><option>Ashok</option><option>Isuzu</option>
+                            <option>Opel</option>
+                        </select>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="year">Year of Manufacture</label>
+                        <input type="number" id="year" name="year" min="1990" max="2025" placeholder="e.g., 2018" required>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="km_driven">Kilometers Driven</label>
+                        <input type="number" id="km_driven" name="km_driven" min="0" placeholder="e.g., 50000" required>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label for="fuel">Fuel Type</label>
+                        <select id="fuel" name="fuel" required>
+                            <option value="">Select Fuel Type</option>
+                            <option>Petrol</option><option>Diesel</option><option>CNG</option>
+                            <option>LPG</option><option>Electric</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="seller_type">Seller Type</label>
+                        <select id="seller_type" name="seller_type" required>
+                            <option value="">Select Seller Type</option>
+                            <option>Individual</option><option>Dealer</option><option>Trustmark Dealer</option>
+                        </select>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label for="transmission">Transmission</label>
+                        <select id="transmission" name="transmission" required>
+                            <option value="">Select Transmission</option>
+                            <option>Manual</option><option>Automatic</option>
+                        </select>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label for="owner">Owner</label>
+                        <select id="owner" name="owner" required>
+                            <option value="">Select Owner</option>
+                            <option>First Owner</option><option>Second Owner</option>
+                            <option>Third Owner</option><option>Fourth & Above Owner</option>
+                            <option>Test Drive Car</option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="mileage">Mileage (kmpl or km/kg)</label>
+                        <input type="number" step="0.01" id="mileage" name="mileage" min="0" placeholder="e.g., 18.5" required>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="engine">Engine (CC)</label>
+                        <input type="number" id="engine" name="engine" min="600" placeholder="e.g., 1197" required>
+                    </div>
+
+             
+                    <div class="form-group">
+                        <label for="max_power">Max Power (bhp)</label>
+                        <input type="number" step="0.01" id="max_power" name="max_power" min="0" placeholder="e.g., 81.8" required>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="seats">Number of Seats</label>
+                        <input type="number" id="seats" name="seats" min="2" max="14" placeholder="e.g., 5" required>
+                    </div>
+
+                 
+                    <div class="form-group full-width">
+                        <button type="submit" class="predict-btn">Predict My Price</button>
+                    </div>
+
+                </div> <!-- end .form-grid -->
+            </form>
+
+            <!-- Result container that will be shown after AJAX response -->
+            <div class="result-container" id="prediction-result" style="display: none;">
+                <h2 id="prediction-text"></h2>
+            </div>
+
+        </div> 
+    </section>
+    <!-- About Us Section -->
+<section id="about">
+  <div class="about-container">
+    <h2>About Carvium</h2>
+    <p>
+      Carvium is an AI-driven platform that predicts the real-time resale value of cars using advanced
+      Machine Learning algorithms. Our model analyzes key parameters such as brand, year, mileage,
+      engine capacity, and fuel type to deliver precise, data-backed price insights.
+    </p>
+    <p>
+      Designed to help buyers and sellers make smarter decisions, Carvium bridges the gap between
+      traditional car evaluation and intelligent automation — bringing the power of data to the automobile world.
+    </p>
+
+    <div class="about-stats">
+      <div>
+        <h3>95%+</h3>
+        <p>Model Accuracy</p>
+      </div>
+      <div>
+        <h3>6,000+</h3>
+        <p>Cars Analyzed</p>
+      </div>
+      <div>
+        <h3>AI Powered</h3>
+        <p>Smart Predictions</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <h3>Carvium</h3>
+    <p>Driven by AI • Powered by Data • Designed for Precision</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p class="copyright">© 2025 Carvium. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+        </div>
+    </div>
+   
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="\static\script.js"></script>  
+    
+</body>
+</html>
